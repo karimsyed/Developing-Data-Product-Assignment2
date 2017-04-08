@@ -1,0 +1,20 @@
+---
+title: "Assignment 2"
+author: "Syed Karim"
+date: "April 8, 2017"
+output: html_document
+---
+
+#Change of Temperature from May to Spetember for Airquality Data
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+
+
+temp<-airquality$Temp
+month<-airquality$Month
+newAirqality<-cbind(temp, month)
+newAirqality<-as.data.frame(newAirqality)
+plot_ly( newAirqality, x = ~month, y = ~temp, color = ~month, type = "scatter", mode= "markers")
+
+```
